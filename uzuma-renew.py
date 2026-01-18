@@ -6,7 +6,7 @@ cron: 0 10 * * *
 new Env('uzuma-renew')
 
 环境变量:
-    ACCOUNTS_UZUMA: 账号密码，格式 email:password，多个用 & 分隔
+    UZUMA_ACCOUNT: 账号密码，格式 email:password，多个用 & 分隔
     TELEGRAM_BOT_TOKEN: Telegram机器人Token (可选)
     TELEGRAM_CHAT_ID: Telegram聊天ID (可选)
 """
@@ -20,7 +20,7 @@ from datetime import datetime
 from playwright.async_api import async_playwright
 
 # ==================== 配置 ====================
-ACCOUNTS_STR = os.environ.get('ACCOUNTS_UZUMA', '')
+ACCOUNTS_STR = os.environ.get('UZUMA_ACCOUNT', '')
 TG_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '')
 TG_USER_ID = os.environ.get('TELEGRAM_CHAT_ID', '')
 
@@ -246,7 +246,7 @@ async def main():
     
     accounts = parse_accounts(ACCOUNTS_STR)
     if not accounts:
-        print("错误: 未配置 ACCOUNTS_UZUMA 环境变量")
+        print("错误: 未配置 UZUMA_ACCOUNT 环境变量")
         print("格式: email:password 或 email1:pass1&email2:pass2")
         return
     
