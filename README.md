@@ -25,7 +25,7 @@
 
 | 变量名 | 说明 | 示例 |
 |--------|------|------|
-| `UZUMA_ACCOUNTS` | 账号配置 | `邮箱:密码&邮箱2:密码2` |
+| `ACCOUNTS_UZUMA` | 账号配置 | `邮箱:密码&邮箱2:密码2` |
 | `TELEGRAM_BOT_TOKEN` | TG机器人Token | (可选) |
 | `TELEGRAM_CHAT_ID` | TG聊天ID | (可选) |
 
@@ -36,7 +36,7 @@
 ## 手动运行
 
 ```bash
-export UZUMA_ACCOUNTS="your@email.com:password"
+export ACCOUNTS_UZUMA="your@email.com:password"
 xvfb-run python3 uzuma-renew.py
 ```
 
